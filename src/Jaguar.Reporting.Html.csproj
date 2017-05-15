@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <RootNamespace>Jaguar.Reporting.Generators</RootNamespace>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Carlos Jesús Huchim Ahumada</Authors>
+    <Company>Jaguar</Company>
+    <Description>Permite usar HTML para los reportes.</Description>
+    <Copyright>Carlos Jesús Huchim Ahumada</Copyright>
+    <PackageTags>reporting</PackageTags>
+    <PackageReleaseNotes>Beta</PackageReleaseNotes>
+    <Version>1.0.0-alpha1</Version>
+    <PackageProjectUrl>https://github.com/huchim/reporting-html</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/huchim/reporting-html/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/huchim/reporting-html</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RootNamespace>Jaguar.Reporting</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Jaguar.Reporting" Version="1.0.0-beta6" />
+    <PackageReference Include="mustache-sharp-core" Version="1.0.1-alpha1" />
+  </ItemGroup>
+
+</Project>
