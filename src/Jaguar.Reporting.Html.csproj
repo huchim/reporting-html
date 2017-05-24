@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFrameworks>net40;netcoreapp1.1</TargetFrameworks>
     <RootNamespace>Jaguar.Reporting.Generators</RootNamespace>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>Carlos Jesús Huchim Ahumada</Authors>
@@ -10,7 +10,7 @@
     <Copyright>Carlos Jesús Huchim Ahumada</Copyright>
     <PackageTags>reporting</PackageTags>
     <PackageReleaseNotes>Beta</PackageReleaseNotes>
-    <Version>1.0.0-alpha1</Version>
+    <Version>1.0.0-alpha2</Version>
     <PackageProjectUrl>https://github.com/huchim/reporting-html</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/huchim/reporting-html/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/huchim/reporting-html</RepositoryUrl>
@@ -18,8 +18,13 @@
     <RootNamespace>Jaguar.Reporting</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Jaguar.Reporting" Version="1.0.0-beta6" />
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <PackageReference Include="Jaguar.Reporting" Version="1.0.0-beta7" />
+    <PackageReference Include="mustache-sharp" Version="0.2.10" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
+    <PackageReference Include="Jaguar.Reporting" Version="1.0.0-beta7" />
     <PackageReference Include="mustache-sharp-core" Version="1.0.1-alpha1" />
   </ItemGroup>
 
