@@ -1,5 +1,5 @@
 # [Reporting](https://huchim.com/)
-[![Visual Studio Team services](https://img.shields.io/vso/build/huchim/c81ea820-fe3c-4afc-be8c-f54f70bfab24/6.svg)][aa] [![NuGet Pre Release](https://img.shields.io/nuget/v/Jaguar.Reporting.Html.svg?style=flat-square)][(https://www.nuget.org/packages/Jaguar.Reporting.Html)][nuget] [![NuGet Pre Release](https://img.shields.io/nuget/vpre/Jaguar.Reporting.Html.svg?style=flat-square)][(https://www.nuget.org/packages/Jaguar.Reporting.Html)]nuget]
+[![Visual Studio Team services](https://img.shields.io/vso/build/huchim/c81ea820-fe3c-4afc-be8c-f54f70bfab24/6.svg)]() [![NuGet Pre Release](https://img.shields.io/nuget/v/Jaguar.Reporting.Html.svg?style=flat-square)][nuget] [![NuGet Pre Release](https://img.shields.io/nuget/vpre/Jaguar.Reporting.Html.svg?style=flat-square)][nuget]
 
 [nuget]: https://www.nuget.org/packages/Jaguar.Reporting.Html
 
