@@ -57,6 +57,9 @@ Puede crear una instancia que le ayudará a recuperar la información de los rep
 // Recupero la ruta al directorio donde se encuentran los reportes.
 var carpetaReportes = Server.MapPath("~/Reports/");
 
+// .NET Core
+// var carpetaReportes = Path.Combine(env.ContentRootPath, "Reports");
+
 // Creo una instancia para administrar los reportes.
 var administradorReportes = new ReportRepository(carpetaReportes);
 ```
