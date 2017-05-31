@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Text;
     using System.Text.RegularExpressions;
 
     public abstract class BaseResources : IResource
@@ -96,7 +97,8 @@
         {
             if (!isRemoteResource(filePath))
             {
-                return File.ReadAllBytes(filePath);
+                var rawContent = File.ReadAllText(filePath, Encoding.UTF8);
+                return Encoding.UTF8.GetBytes(rawContent);
             }
             else
             {

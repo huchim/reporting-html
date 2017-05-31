@@ -148,7 +148,7 @@ namespace Jaguar.Reporting.Generators
         private string LoadTemplateFile()
         {
             var templateFile = Path.Combine(this.report.WorkDirectory, this.TemplateFile);
-            return File.ReadAllText(templateFile);
+            return File.ReadAllText(templateFile, Encoding.UTF8);
         }
 
         private Dictionary<string, List<Dictionary<string, object>>> MergeData(List<DataTable> data)
