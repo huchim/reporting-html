@@ -10,14 +10,14 @@
     <Copyright>Carlos Jesús Huchim Ahumada</Copyright>
     <PackageTags>reporting</PackageTags>
     <PackageReleaseNotes>Beta</PackageReleaseNotes>
-    <Version>1.0.0-alpha3</Version>
+    <Version>1.0.0-alpha4</Version>
     <PackageProjectUrl>https://github.com/huchim/reporting-html</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/huchim/reporting-html/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/huchim/reporting-html</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <RootNamespace>Jaguar.Reporting</RootNamespace>
-    <SignAssembly>False</SignAssembly>
-    <AssemblyOriginatorKeyFile>da.txt.pfx</AssemblyOriginatorKeyFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>Reporting.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
