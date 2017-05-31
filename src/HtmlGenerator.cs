@@ -8,9 +8,11 @@ namespace Jaguar.Reporting.Generators
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
+    using System.Text;
     using Jaguar.Reporting.Common;
+    using Jaguar.Reporting.Html;
     using Mustache;
-
 
     /// <summary>
     /// Genera la información en formato CSV.
@@ -34,6 +36,61 @@ namespace Jaguar.Reporting.Generators
 
         /// <inheritdoc/>
         public string Name => "Página HTML";
+
+        /// <summary>
+        /// Obtiene un valor que indica que las hojas de estilo serán incrustadas en el documento actual.
+        /// </summary>
+        public bool EmbedResources => false;
+
+        /// <summary>
+        /// Devuelve el contenido del documento.
+        /// </summary>
+        /// <param name="resourceHandle">Instancia que se encargará de obtener el tipo exacto de recursos.</param>
+        /// <param name="content">Contenido HTML.</param>
+        /// <returns>Contenido del recurso.</returns>
+        public List<byte[]> GetResources(IResource resourceHandle, string content)
+        {
+            var resourceResult = resourceHandle.Extract(content);
+
+            return resourceResult;
+        }
+
+        /// <summary>
+        /// Devuelve todo el CSS utilizado en el documento incluyendo las hojas de estilo externas.
+        /// </summary>
+        /// <param name="content">Contenido HTML.</param>
+        /// <returns>Contenido CSS del documento.</returns>
+        public string GetAllCss(string content)
+        {
+            // Obtener la lista de documentos.
+            var resoureceCss = GetResources(new CssResources { WorkingDirectory = this.report.WorkDirectory }, content);
+
+            // Unirlos todos.
+            var resourceCssMerged = this.MergeResources(resoureceCss);
+
+            // Devolver todo el contenido.
+            return Encoding.UTF8.GetString(resourceCssMerged);
+        }
+
+        /// <summary>
+        /// Devuelve el contenido de los recursos una vez que han sido mezclados.
+        /// </summary>
+        /// <param name="resources">Lista de recursos.</param>
+        /// <returns>Lista de recursos.</returns>
+        public byte[] MergeResources(List<byte[]> resources)
+        {
+            byte[] result = new byte[resources.Sum(a => a.Length)];
+
+            using (var stream = new MemoryStream(result))
+            {
+                foreach (byte[] bytes in resources)
+                {
+                    stream.Write(bytes, 0, bytes.Length);
+                }
+            }
+
+            return result;
+        }
 
         private string TemplateFile
         {

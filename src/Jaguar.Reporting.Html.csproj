@@ -16,8 +16,8 @@
     <RepositoryUrl>https://github.com/huchim/reporting-html</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <RootNamespace>Jaguar.Reporting</RootNamespace>
-    <SignAssembly>False</SignAssembly>
-    <AssemblyOriginatorKeyFile>da.txt.pfx</AssemblyOriginatorKeyFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>Reporting.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
