@@ -16,7 +16,7 @@
     <RepositoryUrl>https://github.com/huchim/reporting-html</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <RootNamespace>Jaguar.Reporting</RootNamespace>
-    <SignAssembly>True</SignAssembly>
+    <SignAssembly>False</SignAssembly>
     <AssemblyOriginatorKeyFile>Reporting.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 

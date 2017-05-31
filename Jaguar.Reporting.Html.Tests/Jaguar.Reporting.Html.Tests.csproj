@@ -2,7 +2,7 @@
 
   <PropertyGroup>    
     <TargetFramework>netcoreapp1.1</TargetFramework>    
-    <SignAssembly>True</SignAssembly>    
+    <SignAssembly>False</SignAssembly>    
     <AssemblyOriginatorKeyFile>Reporting.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
